@@ -19,26 +19,22 @@ Setting up GitHub webhooks for Jenkins allows Jenkins to automatically trigger b
   - Click on New Item and create a new Freestyle or Pipeline job.
   - In the job configuration, under the Source Code Management section, select Git and provide your repository URL.
   - Add GitHub Hook Trigger
-In the job configuration, scroll down to the Build Triggers section.
-Check the box for GitHub hook trigger for GITScm polling.
-Step 2: Configure GitHub Webhook
-Go to Your GitHub Repository:
-
-Navigate to your GitHub repository.
-Click on Settings > Webhooks.
-Add a New Webhook:
-
-Click the Add webhook button.
-In the Payload URL field, enter the URL of your Jenkins server followed by /github-webhook/. For example, http://your-jenkins-server/github-webhook/.
-Set the Content type to application/json.
-You can select Just the push event or choose to send everything for all event types.
-Click the Add webhook button to save.
-Step 3: Configure Security (Optional but recommended)
-Generate a Secret Token:
-
-Generate a secret token that GitHub will use to sign the payloads sent to Jenkins.
-In the webhook configuration on GitHub, enter the secret token in the Secret field.
-Configure Jenkins to Use the Secret Token:
-
-In Jenkins, navigate to Manage Jenkins > Configure System.
-Find the GitHub section and enter the same secret token under GitHub Web Hook.
+  - In the job configuration, scroll down to the Build Triggers section.
+  - Check the box for GitHub hook trigger for GITScm polling.
+    
+## Step 2: Configure GitHub Webhook
+   - Go to Your GitHub Repository:
+   - Navigate to your GitHub repository.
+   -  Click on Settings > Webhooks.
+   -  Click the Add webhook button.
+   -  In the Payload URL field, enter the URL of your Jenkins server followed by /github-webhook/. For example, http://your-jenkins-server/github-webhook/.
+   -  Set the Content type to application/json.
+   -  You can select Just the push event or choose to send everything for all event types.
+   -  Click the Add webhook button to save.
+## Step 3: Configure Security (Optional but recommended)
+   - Generate a Secret Token:
+   - Generate a secret token that GitHub will use to sign the payloads sent to Jenkins.
+   - In the webhook configuration on GitHub, enter the secret token in the Secret field.
+   - Configure Jenkins to Use the Secret Token:
+   - In Jenkins, navigate to Manage Jenkins > Configure System
+   - Find the GitHub section and enter the same secret token under GitHub Web Hook.
